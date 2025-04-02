@@ -29,5 +29,5 @@ class User(AbstractUser):
         app_label = 'db'
 
     def __str__(self):
-        return self.username  # Возвращает имя пользователя при вызове str()
+        return self.username
 
