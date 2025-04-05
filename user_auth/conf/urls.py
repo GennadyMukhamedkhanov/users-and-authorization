@@ -2,12 +2,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from user_auth.conf import settings
+from conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include('authentication.urls')),
-    # path('users/', include('user.urls')),
+    path('users/', include('user.urls')),
 ]
 
 

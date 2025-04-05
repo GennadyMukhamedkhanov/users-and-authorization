@@ -8,6 +8,9 @@ django = "*"
 django-environ = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+djangorestframework = "*"
+djangorestframework-simplejwt = "*"
+django-service-objects = "*"
 
 [dev-packages]
 
