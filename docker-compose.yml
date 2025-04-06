@@ -1,0 +1,34 @@
+
+services:
+  user_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: user_app
+    command: >
+      sh -c "pipenv run gunicorn --bind 0.0.0.0:8000 user_auth.conf.wsgi:application"
+    volumes:
+      - .:/user_auth  # Убедитесь, что путь правильный
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/user_auth/user_auth
+    env_file:
+      - user_auth/.env  # Укажите путь к вашему .env файлу
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: db_user
+      POSTGRES_USER: user1
+      POSTGRES_PASSWORD: 198616Gm
+    volumes:
+      - postgres_data:/var/lib/postgresql@14/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
