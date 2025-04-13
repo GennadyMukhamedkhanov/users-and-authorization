@@ -67,6 +67,12 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': env.db()
 }
+
+# DATABASE_URL=postgres://user1:198616Gm@localhost:5432/db_user
+# на
+# DATABASE_URL=postgres://user1:198616Gm@db:5432/db_user
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
