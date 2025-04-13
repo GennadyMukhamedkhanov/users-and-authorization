@@ -69,7 +69,7 @@ DATABASES = {
 }
 
 # DATABASE_URL=postgres://user1:198616Gm@localhost:5432/db_user
-# на
+# на сервере
 # DATABASE_URL=postgres://user1:198616Gm@db:5432/db_user
 
 
